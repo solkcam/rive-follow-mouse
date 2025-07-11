@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Animación Cocodrilo</title>
+  <script src="https://unpkg.com/@rive-app/canvas@2.7.0"></script>
+  <style>
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    canvas {
+      width: 500px;
+      height: 500px;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="riveCanvas"></canvas>
+
+  <script>
+    const rive = new Rive({
+      src: 'cocodrilo.riv',
+      canvas: document.getElementById('riveCanvas'),
+      autoplay: true,
+      stateMachines: ['State Machine 1'], // cámbialo si tu archivo tiene otro nombre de máquina de estados
+      onLoad: () => {
+        console.log('Rive cargado');
+      }
+    });
+  </script>
+</body>
+</html>
